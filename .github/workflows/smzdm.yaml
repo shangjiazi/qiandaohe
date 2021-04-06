@@ -23,4 +23,4 @@ jobs:
                   npm install
             - name: "运行【中国电信签到】"
               run: |
-                  node zipao/index.js
+                  node index.js
