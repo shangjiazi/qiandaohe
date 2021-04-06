@@ -1,10 +1,9 @@
-name: 中国电信签到
+name: 签到盒
 
 on:
     workflow_dispatch:
     schedule:
-        - cron: "0 */8 * * *"
-#电信经常签到不成功所以让他每八小时执行一下,一天三次
+        - cron: "0 8 * * *"
     watch:
         types: [started]
 
