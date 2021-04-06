@@ -1,5 +1,6 @@
 //网页端每日签到
 const axios = require("axios");
+const KEY = process.env.SMZDM
 function smzdm() {
   return new Promise(async (resolve) => {
     try {
@@ -8,7 +9,6 @@ function smzdm() {
       const header = {
         headers: {
           Referer: "https://www.smzdm.com/",
-          cookie: config.smzdm.cookie,
         },
       };
       let res = await axios.get(url, header);
