@@ -8,7 +8,7 @@ function smzdm() {
       const header = {
         headers: {
           Referer: "https://www.smzdm.com/",
-          cookie: config.smzdm.cookie,
+          cookie: process.env.SMZDM_COOKIE,
         },
       };
       let res = await axios.get(url, header);
