@@ -40,4 +40,3 @@ function smzdm() {
 }
 //smzdm()
 //module.exports = smzdm;
-sign();
