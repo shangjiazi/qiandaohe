@@ -39,51 +39,17 @@ function smzdm() {
   });
 }
 
-function sign() {
+function server(msg) {
     return new Promise(async (resolve) => {
         try {
-
-            if (!cookie) {
-                console.log("你的cookie呢！！！");
-                qmsg("你的cookie呢！！！");
-                return;
+            let url = `https://sc.ftqq.com/${sckey}.send`
+            let res = await axios.post(url, `text=v2ex签到(づ ●─● )づ${msg}&desp=${msg}`)
+            if (res.data.errmsg == 'success') {
+                console.log('server酱:发送成功')
+            } else {
+                console.log('server酱:发送失败')
+                console.log(res.data)
             }
-            await check();
-            if (once && signstatus == 0) {
-                await daily();
-                await balance();
-                if (signstatus == 0) {
-                    console.log("签到失败")
-                } else if (signstatus == 1 && result_md != "") {
-                    fs.writeFile("./balance.md", result_md + `\n`, {
-                            flag: "a",
-                        },
-                        (err) => {
-                            if (err) {
-                                throw err;
-                            } else {
-                                console.log("success");
-                            }
-                        }
-                    );
-
-                }
-            }
-            fs.writeFile("./result.md", notice + `\n`, {
-                    flag: "a",
-                },
-                (err) => {
-                    if (err) {
-                        throw err;
-                    } else {
-                        console.log("success");
-                    }
-                }
-            );
-            console.log(notice);
-            await qmsg(notice);
-            await server(notice)
-            await tgbot(notice)
         } catch (err) {
             console.log(err);
         }
@@ -91,6 +57,5 @@ function sign() {
     });
 }
 
-sign();
 //smzdm()
 //module.exports = smzdm;
