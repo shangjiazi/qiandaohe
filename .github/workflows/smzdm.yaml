@@ -21,7 +21,7 @@ jobs:
               run: |
                   npm install
             - name: "运行【中国电信签到】"
-              run: node index.js
+              run: node scripts/smzdm.js
               env:
                 SMZDM_COOKIE: ${{ secrets.SMZDM_COOKIE }}
                 QMSGAPI: ${{ secrets.QMSGAPI }}
