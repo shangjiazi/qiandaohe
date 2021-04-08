@@ -2,7 +2,7 @@ const axios = require("axios");
 const sckey = "SCU117965T2c4c60a631cfe952f0139b20992ed9525f850ef9cd950";
 const qmsgkey = "";
 const cpkey = "";
-const pushplustoken = ""
+const pushplustoken = ""BARK_PUSH
 const corpsecret = ""
 const corpid = ""
 const agentid= ""
@@ -101,7 +101,7 @@ function cp(msg) {
     return new Promise(async (resolve) => {
         try {
             if (cpkey) {
-                let url = `https://push.xuthus.cc/send/${cpkey}?c=${encodeURI(msg)}`;
+                let url = `https://api.day.app/${cpkey}?c=${encodeURI(msg)}`;
                 let res = await axios.get(url);
                 if (res.data.code == 200) {
                     console.log("酷推：发送成功");
