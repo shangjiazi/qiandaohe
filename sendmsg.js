@@ -1,7 +1,7 @@
 const axios = require("axios");
-const sckey = "SCU117965T2c4c60a631cfe952f0139b20992ed9525f850ef9cd950";
+const sckey = "xhtekmubmwkihrxf";
 const qmsgkey = "";
-const cpkey = "xhtekmubmwkihrxf";
+const cpkey = "xhtekmubmwkihrxf11";
 const pushplustoken = ""
 const corpsecret = ""
 const corpid = ""
@@ -20,7 +20,7 @@ function server(msg) {
     return new Promise(async (resolve) => {
         try {
             if (sckey) {
-                let url = `https://sctapi.ftqq.com/${sckey}.send`
+                let url = `https://api.day.app/${sckey}/`
                 let data = `title=${encodeURI("签到盒每日任务已完成")}&desp=${encodeURI(msg.replace(/\n/g,"\n\n"))}`
                 let res = await axios.post(url, data)
                 if (res.data.code == 0) {
