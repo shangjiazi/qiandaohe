@@ -1,8 +1,8 @@
 const axios = require("axios");
 const sckey = "SCU117965T2c4c60a631cfe952f0139b20992ed9525f850ef9cd950";
 const qmsgkey = "";
-const cpkey = "";
-const pushplustoken = ""BARK_PUSH
+const cpkey = "xhtekmubmwkihrxf";
+const pushplustoken = ""
 const corpsecret = ""
 const corpid = ""
 const agentid= ""
