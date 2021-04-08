@@ -1,7 +1,7 @@
 const axios = require("axios");
 const sckey = "xhtekmubmwkihrxf";
 const qmsgkey = "";
-const cpkey = "xhtekmubmwkihrxf11";
+const cpkey = "";
 const pushplustoken = ""
 const corpsecret = ""
 const corpid = ""
@@ -21,7 +21,6 @@ function server(msg) {
         try {
             if (sckey) {
                 let url = `https://api.day.app/${sckey}/${encodeURI("签到盒每日任务已完成")}/${encodeURI(msg.replace(/\n/g,"\n\n"))}`
-                let data = `title=${encodeURI("签到盒每日任务已完成")}&desp=${encodeURI(msg.replace(/\n/g,"\n\n"))}`
                 let res = await axios.post(url, data)
                 if (res.data.code == 0) {
                     console.log("server酱:发送成功");
