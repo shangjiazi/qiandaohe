@@ -21,4 +21,4 @@ jobs:
               run: |
                   npm install
             - name: "运行【签到盒】"
-              run: index.js
+              run: node index.js
