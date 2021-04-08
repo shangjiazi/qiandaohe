@@ -101,7 +101,7 @@ function cp(msg) {
     return new Promise(async (resolve) => {
         try {
             if (cpkey) {
-                let url = `https://api.day.app/${cpkey}?c=${encodeURI(msg)}`;
+                let url = `https://api.day.app/${cpkey}?/${encodeURI(msg)}`;
                 let res = await axios.get(url);
                 if (res.data.code == 200) {
                     console.log("酷推：发送成功");
