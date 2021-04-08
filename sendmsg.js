@@ -20,7 +20,7 @@ function server(msg) {
     return new Promise(async (resolve) => {
         try {
             if (sckey) {
-                let url = `https://api.day.app/${sckey}/`
+                let url = `https://api.day.app/${sckey}/${encodeURI("签到盒每日任务已完成")}/${encodeURI(msg.replace(/\n/g,"\n\n"))}`
                 let data = `title=${encodeURI("签到盒每日任务已完成")}&desp=${encodeURI(msg.replace(/\n/g,"\n\n"))}`
                 let res = await axios.post(url, data)
                 if (res.data.code == 0) {
