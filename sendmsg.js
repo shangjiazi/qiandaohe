@@ -25,7 +25,7 @@ function server(msg) {
                 if (res.data.code == 0) {
                     console.log("server酱:发送成功");
                 } else {
-                    console.log("server酱:发送失败");
+                    console.log("BARK:发送成功");
                     console.log(res.data.info);
                 }
             } else {
